@@ -1,0 +1,75 @@
+{
+  "name": "vue-ssr-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "dev": "concurrently \"npm run serve\" \"npm run dev:serve\" ",
+    "dev:serve": "cross-env WEBPACK_TARGET=node node ./server/ssr.js",
+    "build:client": "vue-cli-service build --no-clean",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode server ",
+    "build": "npm run build:server && npm run build:client"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-carousel": "1.0.5",
+    "aos": "3.0.0-beta.6",
+    "axios": "^0.21.0",
+    "babel-helper-vue-jsx-merge-props": "2.0.3",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "emailjs-com": "2.4.1",
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
+    "koa-static": "^5.0.0",
+    "lodash.merge": "^4.6.2",
+    "material-icons": "0.3.1",
+    "serve": "11.3.0",
+    "v-tooltip": "2.0.3",
+    "vue": "^2.6.11",
+    "vue-cookie": "1.1.4",
+    "vue-nav-tabs": "0.5.7",
+    "vue-parallax-js": "0.2.3",
+    "vue-router": "3.3.4",
+    "vue-scrollto": "2.18.1",
+    "vue-selector": "0.0.1",
+    "vue-server-renderer": "^2.6.12",
+    "vueperslides": "2.10.2",
+    "vuex": "^3.5.1",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "concurrently": "^5.3.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "express": "^4.17.1",
+    "memory-fs": "^0.5.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^5.8.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
